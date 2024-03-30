@@ -31,10 +31,12 @@ width = 0.6  # the width of the bars: can also be len(x) sequence
 fig, ax = plt.subplots()
 bottom = np.zeros(3)
 
+# bars can stack by setting the bottom param.
 for sex, sex_count in sex_counts.items():
     p = ax.bar(species, sex_count, width, label=sex, bottom=bottom)
-    bottom += sex_count
+    bottom += sex_count  # because it is numpy
 
+    # put the number central in bar. this may work inproperly in pycharm Plots.
     ax.bar_label(p, label_type='center')
 
 ax.set_title('Number of penguins by sex')

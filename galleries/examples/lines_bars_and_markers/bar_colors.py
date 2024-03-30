@@ -14,7 +14,10 @@ fig, ax = plt.subplots()
 
 fruits = ['apple', 'blueberry', 'cherry', 'orange']
 counts = [40, 100, 30, 55]
+# the length of bar_labels must match the number of bars, while legend number may not.
+# repeat legend lable use a _ prefix then it would appear twice, here it is, _red.
 bar_labels = ['red', 'blue', '_red', 'orange']
+# what does 'tab' mean here?
 bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
 ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
